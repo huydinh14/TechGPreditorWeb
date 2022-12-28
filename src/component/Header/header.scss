@@ -1,0 +1,13 @@
+.header {
+  height: 70px;
+  display: flex;
+  line-height: 70px;
+  vertical-align: middle;
+  border-bottom: 1px solid gray;
+  .logo {
+    margin-top: 10px;
+  }
+  .search {
+    margin-left: 400px;
+  }
+}

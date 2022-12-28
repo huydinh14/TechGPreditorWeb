@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  text-align: center;
+  height: 100vh;
+}
+.title {
+  user-select: none;
+  font-size: 72px;
+  background-color: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Space Mono", monospace;
+  line-height: 100vh;
+  align-items: center;
+  width: 100vw;
+  word-wrap: break-word;
+}
+
+.cursor {
+  height: 300px;
+  width: 300px;
+  background-color: rgba(165, 165, 165, 50%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  position: absolute;
+  z-index: -1;
+}
