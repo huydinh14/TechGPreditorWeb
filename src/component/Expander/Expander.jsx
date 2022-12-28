@@ -1,5 +1,6 @@
 import { Badge, Table } from 'antd';
 const Expander = (dt) => {
+    console.log("moo", dt);
     const dataModelInfo = [];
     const dataStatistics = [];
     const expandedRowRender = () => {
@@ -62,20 +63,18 @@ const Expander = (dt) => {
             key: 'failthreshold',
         },
     ];
-    console.log("gau", dt);
     if (dt) {
-        //const tempHashKey = dt.
-        // [dt].dt.map((value) => {
-        //     return (
-        //         dataModelInfo.push({
-        //             key: value.ModelGPHashKey.toString(),
-        //             modelname: value.InfoModel.ModelName,
-        //             date: value.InfoModel.ModelDate,
-        //             passthreshold: value.InfoModel.PassThreshold,
-        //             failthreshold: value.InfoModel.FailThreshold
-        //         })
-        //     )
-        // })
+        dt.dt[0].InfoModel.map((value, index) => {
+            return (
+                dataModelInfo.push({
+                    key: index,
+                    modelname: value.ModelName,
+                    date: value.ModelDate,
+                    passthreshold: value.PassThreshold,
+                    failthreshold: value.FailThreshold
+                })
+            )
+        })
     }
 
     return (

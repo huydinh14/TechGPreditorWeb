@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { Table, Tag } from 'antd';
 import Expander from '../Expander/Expander';
 import axios from 'axios';
+import LazyLoad from 'react-lazyload'
+
 const App = () => {
     const [statistic, setStatistic] = useState([]);
     const [loading, setLoading] = useState(true);
     const data = [];
-    const tempHashKey = "";
 
     const handleLoadingChange = (enable) => {
         setLoading(enable);
@@ -28,7 +29,11 @@ const App = () => {
     }, [])
 
     const expandedRowRender = () => {
-        return <Expander dt={statistic} hashkey={statistic.} />
+        return (
+            //<LazyLoad>
+            <Expander dt={statistic}/>
+            //</LazyLoad>
+        )
     };
     const columns = [
         {
@@ -56,13 +61,7 @@ const App = () => {
                 data.push({
                     hashkey: value.ModelGPHashKey,
                     allClassName: value.AllClassNames,
-                    key: value.ModelGPHashKey.toString(),
-                    // name: 'Screen',
-                    // platform: 'iOS',
-                    // version: '10.3.4.5654',
-                    // upgradeNum: 500,
-                    // creator: 'Jack',
-                    // createdAt: '2014-12-24 23:12:00',
+                    key: index,
                 })
             )
         })
